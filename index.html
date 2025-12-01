@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPose - 运动动作精准分析系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">GPose</a>
+            <div class="nav-links">
+                <a href="#features" data-i18n="nav_features">功能特性</a>
+                <a href="#pricing" data-i18n="nav_pricing">价格方案</a>
+                <a href="#contact" data-i18n="nav_contact">联系我们</a>
+                <button id="lang-toggle" class="lang-toggle">EN</button>
+                <a href="#" class="btn-primary-sm" data-i18n="nav_download">下载试用</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1 data-i18n="hero_title" class="hero-title">精准捕捉每一个动作<br><span class="gradient-text">释放运动潜能</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">GPose v1.0 结合 AI 姿态识别与多视角融合技术，为击剑与传统武术提供专业级运动分析。</p>
+                <div class="hero-actions">
+                    <a href="#pricing" class="btn-primary btn-hero" data-i18n="hero_buy">立即购买</a>
+                    <a href="#features" class="btn-secondary btn-hero-secondary" data-i18n="hero_learn_more">了解更多</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="yanshi.png" alt="GPose Demo" class="hero-demo-image">
+                    <div class="hero-glow"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-i18n="features_title">核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3 data-i18n="feature_1_title">AI 智能识别</h3>
+                    <p data-i18n="feature_1_desc">自动识别击剑、太极拳等运动类型，支持 OpenPose 与 MediaPipe 双引擎，精准捕捉 33 个关键点。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h3 data-i18n="feature_2_title">多视角融合</h3>
+                    <p data-i18n="feature_2_desc">支持 2-4 个视角同步分析，通过独创融合算法提升 10-15% 的空间定位精度。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3 data-i18n="feature_3_title">专业数据分析</h3>
+                    <p data-i18n="feature_3_desc">提供关节角度、角速度、重心轨迹等专业指标，支持 CSV、JSON 及 PDF 报告导出。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3 data-i18n="feature_4_title">高性能体验</h3>
+                    <p data-i18n="feature_4_desc">优化的批处理与内存管理，支持实时分析，Apple 风格 UI 带来流畅的交互体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 data-i18n="pricing_title">选择您的方案</h2>
+            <p class="section-subtitle" data-i18n="pricing_subtitle">灵活的定价，满足个人与团队的需求</p>
+
+            <div class="pricing-calculator">
+                <div class="calculator-controls">
+                    <div class="control-group">
+                        <label><span data-i18n="pricing_users_label">用户数量</span>: <span
+                                id="user-count-display">1</span></label>
+                        <input type="range" id="user-count" min="1" max="50" value="1">
+                    </div>
+                    <div class="control-group toggle-group">
+                        <span data-i18n="pricing_monthly">月付</span>
+                        <label class="switch">
+                            <input type="checkbox" id="billing-cycle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span><span data-i18n="pricing_yearly">年付</span> <span class="discount-badge"
+                                data-i18n="pricing_discount">-20%</span></span>
+                    </div>
+                </div>
+
+                <div class="pricing-cards">
+                    <div class="price-card" id="personal-plan">
+                        <div class="card-header">
+                            <h3 data-i18n="plan_personal_title">个人版</h3>
+                            <p data-i18n="plan_personal_desc">适合个人教练与运动员</p>
+                        </div>
+                        <div class="price-display">
+                            <span class="currency">¥</span>
+                            <span class="amount" id="personal-price">99</span>
+                            <span class="period">/月</span>
+                        </div>
+                        <ul class="features-list">
+                            <li data-i18n="plan_personal_feat_1">单人姿态分析</li>
+                            <li data-i18n="plan_personal_feat_2">基础数据导出 (CSV)</li>
+                            <li data-i18n="plan_personal_feat_3">4k 视频支持</li>
+                            <li data-i18n="plan_personal_feat_4">社区支持</li>
+                        </ul>
+                        <button class="btn-outline">选择方案</button>
+                    </div>
+
+                    <div class="price-card featured" id="pro-plan">
+                        <div class="card-header">
+                            <h3 data-i18n="plan_pro_title">专业版</h3>
+                            <p data-i18n="plan_pro_desc">适合专业俱乐部与科研机构</p>
+                        </div>
+                        <div class="price-display">
+                            <span class="currency">¥</span>
+                            <span class="amount" id="pro-price">299</span>
+                            <span class="period">/月</span>
+                        </div>
+                        <ul class="features-list">
+                            <li data-i18n="plan_pro_feat_1">多人姿态分析</li>
+                            <li data-i18n="plan_pro_feat_2">全格式导出 (PDF/JSON)</li>
+                            <li data-i18n="plan_pro_feat_3">4K 视频支持</li>
+                            <li data-i18n="plan_pro_feat_4">多视角融合功能</li>
+                            <li data-i18n="plan_pro_feat_5">优先技术支持</li>
+                        </ul>
+                        <button class="btn-primary">选择方案</button>
+                    </div>
+
+                    <div class="price-card" id="enterprise-plan">
+                        <div class="card-header">
+                            <h3 data-i18n="plan_enterprise_title">企业版</h3>
+                            <p data-i18n="plan_enterprise_desc">适合大型体育院校与国家队</p>
+                        </div>
+                        <div class="price-display">
+                            <span class="currency">¥</span>
+                            <span class="amount" id="enterprise-price">999</span>
+                            <span class="period">/月</span>
+                        </div>
+                        <ul class="features-list">
+                            <li data-i18n="plan_enterprise_feat_1">无限用户授权</li>
+                            <li data-i18n="plan_enterprise_feat_2">定制化功能开发</li>
+                            <li data-i18n="plan_enterprise_feat_3">私有化部署</li>
+                            <li data-i18n="plan_enterprise_feat_4">专属客户经理</li>
+                            <li data-i18n="plan_enterprise_feat_5">API 接口访问</li>
+                        </ul>
+                        <button class="btn-outline">联系销售</button>
+                    </div>
+                </div>
+
+                <div class="total-summary">
+                    <p><span data-i18n="total_price_label">预计总价</span>: <span id="total-price">¥99</span> <span
+                            id="billing-text">/月</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h4>GPose</h4>
+                    <p data-i18n="footer_slogan">重新定义运动分析</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h5 data-i18n="footer_product">产品</h5>
+                        <a href="#" data-i18n="footer_features">功能</a>
+                        <a href="#" data-i18n="footer_download">下载</a>
+                        <a href="#" data-i18n="footer_changelog">更新日志</a>
+                    </div>
+                    <div class="link-group">
+                        <h5 data-i18n="footer_resources">资源</h5>
+                        <a href="#" data-i18n="footer_docs">使用文档</a>
+                        <a href="#" data-i18n="footer_api">API 文档</a>
+                        <a href="#" data-i18n="footer_community">社区</a>
+                    </div>
+                    <div class="link-group">
+                        <h5 data-i18n="footer_company">公司</h5>
+                        <a href="#" data-i18n="footer_about">关于我们</a>
+                        <a href="#" data-i18n="footer_contact">联系方式</a>
+                        <a href="#" data-i18n="footer_privacy">隐私政策</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GPose Team. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
